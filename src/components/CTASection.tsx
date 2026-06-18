@@ -3,27 +3,73 @@ import { ContactDialog } from './ContactDialog'
 
 export function CTASection() {
   return (
-    <motion.section 
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-      className="py-40 text-center px-margin-mobile"
-    >
-      <div className="inline-block glass-surface px-12 py-24 w-full max-w-4xl mx-auto relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/5 blur-3xl rounded-full"></div>
-        <div className="relative z-10">
-          <h2 className="font-display-lg-mobile md:text-[64px] font-display-lg text-on-surface mb-8">Ready to evolve?</h2>
-          <p className="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-lg mx-auto opacity-80">
-            Let's build something that matters. Currently accepting new projects.
+    <section id="contact" className="relative py-40 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest overflow-hidden">
+      {/* Grid */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,196,149,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,196,149,0.04) 1px, transparent 1px)',
+          backgroundSize: '80px 80px',
+        }}
+      />
+
+      {/* Radial orange glow */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse 50% 60% at 50% 50%, rgba(255,157,66,0.12) 0%, transparent 70%)',
+        }}
+      />
+
+      <div className="relative max-w-container-max mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col items-center text-center"
+        >
+          {/* Label */}
+          <div className="font-label-sm text-label-sm text-primary uppercase tracking-[0.3em] mb-8 flex items-center gap-3">
+            <span className="w-8 h-px bg-primary/50" />
+            04 — Let's Build
+            <span className="w-8 h-px bg-primary/50" />
+          </div>
+
+          {/* Headline */}
+          <h2
+            className="font-display-lg-mobile md:text-[72px] md:font-display-lg text-on-surface leading-none mb-6 tracking-tight"
+          >
+            Ready to<br />
+            <span className="text-primary italic">evolve?</span>
+          </h2>
+
+          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto opacity-70 mb-14 leading-relaxed">
+            Let's build something that matters. Currently accepting new projects and collaborations.
           </p>
-          <ContactDialog>
-            <button className="bg-primary text-on-primary-container px-12 py-5 font-headline-md text-[20px] rounded-none glow-hover hover:scale-110 transition-all duration-500 text-black">
-              Start a Project
-            </button>
-          </ContactDialog>
-        </div>
+
+          {/* CTA pair */}
+          <div className="flex flex-col sm:flex-row gap-4 items-center">
+            <ContactDialog>
+              <button
+                id="cta-start-project"
+                className="group bg-primary text-background px-12 py-5 font-headline-md text-[20px] flex items-center gap-3 hover:scale-105 hover:bg-on-background hover:text-background transition-all duration-300 glow-hover"
+              >
+                Start a Project
+                <span className="material-symbols-outlined transition-transform group-hover:rotate-45">north_east</span>
+              </button>
+            </ContactDialog>
+            <a
+              href="mailto:anishvis007@gmail.com"
+              className="group px-12 py-5 border border-outline-variant/30 font-headline-md text-[20px] text-on-surface-variant flex items-center gap-3 hover:border-primary/60 hover:text-primary transition-all duration-300"
+            >
+              Send an Email
+            </a>
+          </div>
+        </motion.div>
       </div>
-    </motion.section>
+    </section>
   )
 }

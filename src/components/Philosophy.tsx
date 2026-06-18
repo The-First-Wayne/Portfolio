@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 export function Philosophy() {
   return (
-    <motion.section 
+    <motion.section
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -24,9 +24,9 @@ export function Philosophy() {
           <div className="pt-8 border-t border-outline-variant/20">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
-                <img 
-                  className="w-full h-full object-cover" 
-                  alt="A professional headshot of Anish" 
+                <img
+                  className="w-full h-full object-cover"
+                  alt="A professional headshot of Anish"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzNT23cZgSeUGQWR509c5kelhzXvw879PSwkyFYLmXXFtvKTdadmNy1xmd8mrePcA3Gur1tvSoMtzue_eJl0EpRv5-y16Un6usifnOPJXkCR4YilZ7ODpA0uS0McWvldn_3ALMLOxkMafDlUHA8D0jgDQ6tKQdey4nwxSqnhYXXNC__mOzuTvqkinOqKZhIPfYXTKt0770vwvAAvhHEA_0C2jDfhc8S5l1C7dPZ9p0PYvq0eDQcXvEINloGaCcgmD89t9vCZDV_5E"
                 />
               </div>

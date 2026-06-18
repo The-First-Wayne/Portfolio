@@ -1,20 +1,180 @@
-import { ContactDialog } from './ContactDialog'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+
+const navLinks = [
+  { label: 'Work', id: 'work' },
+  { label: 'About', id: 'about' },
+  { label: 'Credentials', id: 'credentials' },
+  { label: 'Contact', id: 'contact' },
+]
+
+function scrollToSection(id: string) {
+  if (id === 'top') {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    return
+  }
+  const el = document.getElementById(id)
+  if (el) {
+    const offset = 80 // nav height
+    const top = el.getBoundingClientRect().top + window.scrollY - offset
+    window.scrollTo({ top, behavior: 'smooth' })
+  }
+}
 
 export function Nav() {
+  const [scrolled, setScrolled] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const [activeLink, setActiveLink] = useState('Work')
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    const onResize = () => { if (window.innerWidth >= 768) setMobileOpen(false) }
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
+  const handleNav = (label: string, id: string) => {
+    setActiveLink(label)
+    setMobileOpen(false)
+    scrollToSection(id)
+  }
+
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto bg-transparent backdrop-blur-md border-b border-outline-variant/10">
-      <div className="font-headline-md text-headline-md font-bold text-on-surface">ANISH.G</div>
-      {/* Desktop Nav Links */}
-      <div className="hidden md:flex gap-8 items-center font-label-sm text-label-sm uppercase tracking-widest">
-        <a className="text-primary font-bold border-b-2 border-primary pb-1" href="#work">Work</a>
-        <a className="text-on-tertiary-container hover:text-on-surface transition-colors" href="#">About</a>
-        <a className="text-on-tertiary-container hover:text-on-surface transition-colors" href="#">Services</a>
-      </div>
-      <ContactDialog>
-        <button className="bg-primary text-on-primary-container px-6 py-2 font-label-sm uppercase tracking-widest rounded-none glow-hover hover:scale-105 transition-all duration-300 active:scale-95 text-black">
-          Let's Talk
-        </button>
-      </ContactDialog>
-    </nav>
+    <>
+      <motion.nav
+        initial={{ y: -80, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+          scrolled
+            ? 'bg-background/85 backdrop-blur-xl border-b border-outline-variant/15 py-4'
+            : 'bg-transparent py-6'
+        }`}
+      >
+        <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+
+          {/* Brand */}
+          <button
+            onClick={() => scrollToSection('top')}
+            className="font-headline-md text-headline-md font-bold text-on-surface tracking-widest hover:text-primary transition-colors duration-300"
+          >
+            ANISH<span className="text-primary">.G</span>
+          </button>
+
+          {/* Desktop links */}
+          <div className="hidden md:flex gap-10 items-center font-label-sm text-label-sm uppercase tracking-widest">
+            {navLinks.map(({ label, id }) => (
+              <button
+                key={label}
+                onClick={() => handleNav(label, id)}
+                className={`relative group transition-colors duration-300 ${
+                  activeLink === label
+                    ? 'text-primary'
+                    : 'text-on-surface-variant hover:text-on-surface'
+                }`}
+              >
+                {label}
+                <span
+                  className={`absolute -bottom-1 left-0 h-px bg-primary transition-all duration-300 ${
+                    activeLink === label ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}
+                />
+              </button>
+            ))}
+          </div>
+
+          {/* Availability dot — desktop */}
+          <div className="hidden md:flex items-center gap-3">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-60" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
+            </span>
+            <span className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">
+              Open to work
+            </span>
+          </div>
+
+          {/* Hamburger — mobile */}
+          <button
+            id="nav-mobile-toggle"
+            className="md:hidden flex flex-col gap-1.5 p-2 z-50"
+            onClick={() => setMobileOpen((o) => !o)}
+            aria-label="Toggle menu"
+          >
+            <motion.span
+              animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className="block w-6 h-px bg-on-surface origin-center"
+            />
+            <motion.span
+              animate={mobileOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
+              transition={{ duration: 0.2 }}
+              className="block w-6 h-px bg-on-surface"
+            />
+            <motion.span
+              animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className="block w-6 h-px bg-on-surface origin-center"
+            />
+          </button>
+        </div>
+      </motion.nav>
+
+      {/* Mobile drawer */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed top-0 left-0 w-full h-screen z-40 bg-background/97 backdrop-blur-2xl flex flex-col justify-center items-center gap-10"
+          >
+            {/* Grid bg inside drawer */}
+            <div className="absolute inset-0 pointer-events-none"
+              style={{
+                backgroundImage: 'linear-gradient(rgba(255,196,149,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,196,149,0.04) 1px, transparent 1px)',
+                backgroundSize: '80px 80px',
+              }}
+            />
+
+            {navLinks.map(({ label, id }, i) => (
+              <motion.button
+                key={label}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.07, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                onClick={() => handleNav(label, id)}
+                className="relative font-headline-xl text-headline-xl text-on-surface hover:text-primary transition-colors duration-300 uppercase tracking-widest group"
+              >
+                {label}
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />
+              </motion.button>
+            ))}
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="relative flex items-center gap-3 mt-6"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-60" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
+              </span>
+              <span className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">
+                Open to work
+              </span>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   )
 }

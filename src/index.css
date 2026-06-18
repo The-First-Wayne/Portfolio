@@ -24,21 +24,34 @@
     display: flex;
     overflow: hidden;
     user-select: none;
-    gap: 2rem;
   }
   .marquee-content {
     flex-shrink: 0;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
     min-width: 100%;
     gap: 2rem;
-    animation: scroll 20s linear infinite;
+    padding-right: 2rem;
+    animation: marquee-scroll 28s linear infinite;
+  }
+  /* Pause on hover — parent has class `group` */
+  .group:hover .marquee-content {
+    animation-play-state: paused;
   }
 }
 
-@keyframes scroll {
+@keyframes marquee-scroll {
   from { transform: translateX(0); }
-  to { transform: translateX(-100%); }
+  to   { transform: translateX(-100%); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
 }
 
 .custom-cursor {

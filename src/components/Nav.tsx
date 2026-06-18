@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
-  { label: 'Work', id: 'work' },
   { label: 'About', id: 'about' },
+  { label: 'Projects', id: 'work' },
   { label: 'Credentials', id: 'credentials' },
   { label: 'Contact', id: 'contact' },
 ]
@@ -24,7 +24,7 @@ function scrollToSection(id: string) {
 export function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [activeLink, setActiveLink] = useState('Work')
+  const [activeLink, setActiveLink] = useState('')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -36,6 +36,45 @@ export function Nav() {
     const onResize = () => { if (window.innerWidth >= 768) setMobileOpen(false) }
     window.addEventListener('resize', onResize)
     return () => window.removeEventListener('resize', onResize)
+  }, [])
+
+  // Highlight active section on scroll
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-30% 0px -50% 0px',
+      threshold: 0,
+    }
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id
+          const link = navLinks.find((l) => l.id === id)
+          if (link) {
+            setActiveLink(link.label)
+          }
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions)
+    navLinks.forEach((link) => {
+      const el = document.getElementById(link.id)
+      if (el) observer.observe(el)
+    })
+
+    const handleScrollReset = () => {
+      if (window.scrollY < 120) {
+        setActiveLink('')
+      }
+    }
+    window.addEventListener('scroll', handleScrollReset, { passive: true })
+
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('scroll', handleScrollReset)
+    }
   }, [])
 
   const handleNav = (label: string, id: string) => {

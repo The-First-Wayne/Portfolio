@@ -29,7 +29,7 @@ const containerVariants = {
 }
 const itemVariants = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } },
 }
 
 export function Projects() {
@@ -74,7 +74,7 @@ export function Projects() {
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.9, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.9, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
               className="group relative border-b border-outline-variant/15 py-12 md:py-14 grid grid-cols-1 md:grid-cols-12 gap-8 cursor-pointer hover:bg-surface-container/40 transition-colors duration-500 px-4 -mx-4"
             >
               {/* Number + year */}

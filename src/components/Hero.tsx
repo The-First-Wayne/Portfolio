@@ -113,8 +113,8 @@ export function Hero() {
           {/* Social */}
           <motion.div variants={itemVariants} className="flex gap-6 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">
             {[
-              { label: 'LinkedIn', href: 'https://linkedin.com' },
-              { label: 'GitHub', href: 'https://github.com' },
+              { label: 'LinkedIn', href: 'https://www.linkedin.com/in/anish-gayen-319789335/' },
+              { label: 'GitHub', href: 'https://github.com/The-First-Wayne' },
               { label: 'Email', href: 'mailto:anishvis007@gmail.com' },
             ].map(({ label, href }) => (
               <a key={label} href={href}

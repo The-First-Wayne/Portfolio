@@ -25,8 +25,8 @@ export function Footer() {
         {/* Links */}
         <div className="flex gap-8 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">
           {[
-            { label: 'LinkedIn', href: 'https://linkedin.com' },
-            { label: 'GitHub', href: 'https://github.com' },
+            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/anish-gayen-319789335/' },
+            { label: 'GitHub', href: 'https://github.com/The-First-Wayne' },
             { label: 'Email', href: 'mailto:anishvis007@gmail.com' },
           ].map(({ label, href }) => (
             <a

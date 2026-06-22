@@ -25,7 +25,7 @@ export function SkillsMarquee() {
         <div className="marquee-content">
           {tickerItems.map((text, i) => (
             <div key={i} className="flex gap-6 items-center shrink-0">
-              <span className="font-headline-md text-[17px] uppercase tracking-tighter text-on-surface/35 italic hover:text-primary/70 transition-colors duration-300 cursor-default whitespace-nowrap">
+              <span className="font-headline-md font-bold text-[17px] uppercase tracking-tighter text-on-surface/35 italic hover:text-primary/70 transition-colors duration-300 cursor-default whitespace-nowrap">
                 {text}
               </span>
               <span className="text-primary/60 text-xl">•</span>
@@ -37,7 +37,7 @@ export function SkillsMarquee() {
         <div className="marquee-content" aria-hidden="true">
           {tickerItems.map((text, i) => (
             <div key={i} className="flex gap-6 items-center shrink-0">
-              <span className="font-headline-md text-[17px] uppercase tracking-tighter text-on-surface/35 italic hover:text-primary/70 transition-colors duration-300 cursor-default whitespace-nowrap">
+              <span className="font-headline-md font-bold text-[17px] uppercase tracking-tighter text-on-surface/35 italic hover:text-primary/70 transition-colors duration-300 cursor-default whitespace-nowrap">
                 {text}
               </span>
               <span className="text-primary/60 text-xl">•</span>

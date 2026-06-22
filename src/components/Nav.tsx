@@ -100,13 +100,13 @@ export function Nav() {
           {/* Brand */}
           <button
             onClick={() => scrollToSection('top')}
-            className="font-headline-md text-headline-md font-bold text-on-surface tracking-widest hover:text-primary transition-colors duration-300"
+            className="font-headline-md text-[36px] md:text-[40px] font-bold text-on-surface tracking-widest hover:text-primary transition-colors duration-300"
           >
             ANISH<span className="text-primary">.G</span>
           </button>
 
           {/* Desktop links */}
-          <div className="hidden md:flex gap-10 items-center font-label-sm text-label-sm uppercase tracking-widest">
+          <div className="hidden md:flex gap-10 items-center font-label-sm text-body-md uppercase tracking-widest">
             {navLinks.map(({ label, id }) => (
               <button
                 key={label}
@@ -133,7 +133,7 @@ export function Nav() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-60" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
             </span>
-            <span className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">
+            <span className="font-label-sm text-body-md text-on-surface-variant uppercase tracking-widest">
               Open to work
             </span>
           </div>
@@ -207,7 +207,7 @@ export function Nav() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-60" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
               </span>
-              <span className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">
+              <span className="font-label-sm text-body-md text-on-surface-variant uppercase tracking-widest">
                 Open to work
               </span>
             </motion.div>

@@ -78,7 +78,7 @@ export function Certifications() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.8, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className="group flex flex-col md:flex-row items-start md:items-center gap-6 py-8 border-b border-outline-variant/15 hover:bg-surface-container/30 transition-colors duration-400 px-0 sm:px-4 sm:-mx-4 cursor-default"
+              className="group glass-surface flex flex-col md:flex-row items-start md:items-center gap-6 py-8 border border-white/10 shadow-xl shadow-black/10 transition-colors duration-400 px-0 sm:px-4 sm:-mx-4 cursor-default"
             >
               {/* Index */}
               <span className="hidden md:block font-label-sm text-label-sm text-primary/30 tracking-widest w-8 shrink-0">

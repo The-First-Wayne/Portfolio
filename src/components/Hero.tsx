@@ -94,16 +94,7 @@ export function Hero() {
           </motion.div>
 
           {/* CTA + bio */}
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row sm:items-end gap-3 mb-10">
-            <ContactDialog>
-              <button
-                id="hero-cta-btn"
-                className="group w-fit bg-on-background text-background px-4 sm:px-6 py-3.5 sm:py-4 font-headline-md text-[14px] sm:text-[16px] flex items-center gap-2 sm:gap-3 hover:scale-105 hover:bg-primary hover:text-on-primary transition-all duration-300"
-              >
-                Let's Talk
-                <span className="material-symbols-outlined transition-transform group-hover:rotate-45">north_east</span>
-              </button>
-            </ContactDialog>
+          <motion.div variants={itemVariants} className="mb-10">
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-lg opacity-80 leading-relaxed">
               I build intelligent systems and premium digital experiences using AI agentics and robust engineering.
               Crafted with kinetic energy.
@@ -113,15 +104,16 @@ export function Hero() {
           {/* Social */}
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">
             {[
-              { label: 'LinkedIn', href: 'https://www.linkedin.com/in/anish-gayen-319789335/' },
-              { label: 'GitHub', href: 'https://github.com/The-First-Wayne' },
-              { label: 'Email', href: 'mailto:anishvis007@gmail.com' },
-            ].map(({ label, href }) => (
+              { label: 'LinkedIn', href: 'https://www.linkedin.com/in/anish-gayen-319789335/', icon: '/linkedin.svg' },
+              { label: 'GitHub', href: 'https://github.com/The-First-Wayne', icon: '/github.svg' },
+              { label: 'Email', href: 'mailto:anishvis007@gmail.com', icon: '/mail.svg' },
+            ].map(({ label, href, icon }) => (
               <a key={label} href={href}
                 target={href.startsWith('http') ? '_blank' : undefined}
                 rel="noopener noreferrer"
-                className="relative group/link hover:text-primary transition-colors duration-300">
-                {label}
+                className="relative group/link inline-flex items-center gap-2 hover:text-primary transition-colors duration-300">
+                <img src={icon} alt={`${label} icon`} className="h-4 w-4 object-contain" />
+                <span>{label}</span>
                 <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover/link:w-full" />
               </a>
             ))}

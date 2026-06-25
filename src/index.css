@@ -10,12 +10,44 @@
 
 @layer utilities {
   .glass-surface {
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(16px);
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.08) 38%, rgba(255, 255, 255, 0.03) 100%);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18);
+    border-radius: 1rem;
+  }
+  .glass-surface::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.05) 30%, transparent 65%);
+    opacity: 0.45;
+    pointer-events: none;
+    transform: translate(-110%, -110%);
+    transition: transform 0.9s ease, opacity 0.5s ease;
+    filter: blur(10px);
+  }
+  .glass-surface:hover::before {
+    transform: translate(20%, 20%);
+    opacity: 0.55;
+  }
+  .glass-surface::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.08) 18%, transparent 42%);
+    opacity: 0.25;
+    pointer-events: none;
+    filter: blur(5px);
   }
   .glow-hover:hover {
-    box-shadow: 0 0 25px rgba(255, 196, 149, 0.25);
+    box-shadow: 0 0 30px rgba(255, 196, 149, 0.28);
   }
   .hero-gradient {
     background: radial-gradient(circle at 60% 40%, rgba(255, 157, 66, 0.35) 0%, rgba(19, 19, 19, 1) 70%);

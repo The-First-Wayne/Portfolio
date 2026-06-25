@@ -51,19 +51,10 @@ export function CTASection() {
           </p>
 
           {/* CTA pair */}
-          <div className="flex flex-col sm:flex-row gap-4 items-center">
-            <ContactDialog>
-              <button
-                id="cta-start-project"
-                className="group bg-primary text-background px-8 sm:px-12 py-4 sm:py-5 font-headline-md text-[18px] sm:text-[20px] flex items-center gap-3 hover:scale-105 hover:bg-on-background hover:text-background transition-all duration-300 glow-hover"
-              >
-                Start a Project
-                <span className="material-symbols-outlined transition-transform group-hover:rotate-45">north_east</span>
-              </button>
-            </ContactDialog>
+          <div className="flex justify-center">
             <a
               href="mailto:anishvis007@gmail.com"
-              className="group px-8 sm:px-12 py-4 sm:py-5 border border-outline-variant/30 font-headline-md text-[18px] sm:text-[20px] text-on-surface-variant flex items-center gap-3 hover:border-primary/60 hover:text-primary transition-all duration-300"
+              className="group glass-surface px-8 sm:px-12 py-4 sm:py-5 border border-white/10 bg-white/5 backdrop-blur-xl font-headline-md text-[18px] sm:text-[20px] text-on-surface-variant flex items-center gap-3 hover:border-primary/50 hover:text-primary transition-all duration-300"
             >
               Send an Email
             </a>

@@ -25,19 +25,20 @@ export function Footer() {
         {/* Links */}
         <div className="flex gap-8 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">
           {[
-            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/anish-gayen-319789335/' },
-            { label: 'GitHub', href: 'https://github.com/The-First-Wayne' },
-            { label: 'Email', href: 'mailto:anishvis007@gmail.com' },
-          ].map(({ label, href }) => (
+            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/anish-gayen-319789335/', icon: '/linkedin.svg' },
+            { label: 'GitHub', href: 'https://github.com/The-First-Wayne', icon: '/github.svg' },
+            { label: 'Email', href: 'mailto:anishvis007@gmail.com', icon: '/mail.svg' },
+          ].map(({ label, href, icon }) => (
             <a
               key={label}
               href={href}
               target={href.startsWith('http') ? '_blank' : undefined}
               rel="noopener noreferrer"
-              className="relative group hover:text-primary transition-colors duration-300"
+              className="relative group/link inline-flex items-center gap-2 hover:text-primary transition-colors duration-300"
             >
-              {label}
-              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />
+              <img src={icon} alt={`${label} icon`} className="h-4 w-4 object-contain" />
+              <span>{label}</span>
+              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover/link:w-full" />
             </a>
           ))}
         </div>

@@ -185,17 +185,6 @@ export function Hero() {
           className="absolute bottom-0 left-0 right-0 h-32"
           style={{ background: 'linear-gradient(to top, #131313 0%, transparent 100%)' }}
         />
-
-        {/* decorative 4-point star (matches reference) */}
-        <motion.div
-          initial={{ opacity: 0, rotate: -45 }}
-          animate={{ opacity: 1, rotate: 0 }}
-          transition={{ delay: 1.4, duration: 1 }}
-          className="absolute bottom-16 right-12 text-primary/40"
-          style={{ fontSize: '48px', lineHeight: 1 }}
-        >
-          ✦
-        </motion.div>
       </motion.div>
     </section>
   )

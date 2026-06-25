@@ -100,7 +100,7 @@ export function Nav() {
           {/* Brand */}
           <button
             onClick={() => scrollToSection('top')}
-            className="font-headline-md text-[36px] md:text-[40px] font-bold text-on-surface tracking-widest hover:text-primary transition-colors duration-300"
+            className="font-headline-md text-[30px] sm:text-[34px] md:text-[40px] font-bold text-on-surface tracking-widest hover:text-primary transition-colors duration-300"
           >
             ANISH<span className="text-primary">.G</span>
           </button>
@@ -141,24 +141,24 @@ export function Nav() {
           {/* Hamburger — mobile */}
           <button
             id="nav-mobile-toggle"
-            className="md:hidden flex flex-col gap-1.5 p-2 z-50"
+            className="md:hidden relative h-10 w-10 p-2 z-50 flex items-center justify-center"
             onClick={() => setMobileOpen((o) => !o)}
             aria-label="Toggle menu"
           >
             <motion.span
-              animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+              animate={mobileOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -5 }}
               transition={{ duration: 0.3 }}
-              className="block w-6 h-px bg-on-surface origin-center"
+              className="absolute left-1/2 top-1/2 block w-6 h-px bg-on-surface origin-center -translate-x-1/2 -translate-y-1/2"
             />
             <motion.span
               animate={mobileOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
               transition={{ duration: 0.2 }}
-              className="block w-6 h-px bg-on-surface"
+              className="absolute left-1/2 top-1/2 block w-6 h-px bg-on-surface origin-center -translate-x-1/2 -translate-y-1/2"
             />
             <motion.span
-              animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+              animate={mobileOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 5 }}
               transition={{ duration: 0.3 }}
-              className="block w-6 h-px bg-on-surface origin-center"
+              className="absolute left-1/2 top-1/2 block w-6 h-px bg-on-surface origin-center -translate-x-1/2 -translate-y-1/2"
             />
           </button>
         </div>
@@ -173,7 +173,7 @@ export function Nav() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed top-0 left-0 w-full h-screen z-40 bg-background/97 backdrop-blur-2xl flex flex-col justify-center items-center gap-10"
+            className="fixed top-0 left-0 w-full h-screen z-40 bg-background/97 backdrop-blur-2xl flex flex-col justify-center items-center gap-8 px-6 py-24 sm:py-28"
           >
             {/* Grid bg inside drawer */}
             <div className="absolute inset-0 pointer-events-none"
@@ -190,7 +190,7 @@ export function Nav() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.07, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 onClick={() => handleNav(label, id)}
-                className="relative font-headline-xl text-headline-xl text-on-surface hover:text-primary transition-colors duration-300 uppercase tracking-widest group"
+                className="relative font-headline-md text-[26px] sm:text-[28px] text-on-surface hover:text-primary transition-colors duration-300 uppercase tracking-[0.35em] group"
               >
                 {label}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />

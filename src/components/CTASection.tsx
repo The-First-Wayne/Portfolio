@@ -3,7 +3,7 @@ import { ContactDialog } from './ContactDialog'
 
 export function CTASection() {
   return (
-    <section id="contact" className="relative py-40 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest overflow-hidden">
+    <section id="contact" className="relative py-28 md:py-40 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest overflow-hidden">
       {/* Grid */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -40,7 +40,7 @@ export function CTASection() {
 
           {/* Headline */}
           <h2
-            className="font-display-lg-mobile md:text-[72px] md:font-display-lg text-on-surface leading-none mb-6 tracking-tight"
+            className="font-display-lg-mobile text-[44px] sm:text-[52px] md:text-[72px] md:font-display-lg text-on-surface leading-none mb-6 tracking-tight"
           >
             Ready to<br />
             <span className="text-primary italic">evolve?</span>
@@ -55,7 +55,7 @@ export function CTASection() {
             <ContactDialog>
               <button
                 id="cta-start-project"
-                className="group bg-primary text-background px-12 py-5 font-headline-md text-[20px] flex items-center gap-3 hover:scale-105 hover:bg-on-background hover:text-background transition-all duration-300 glow-hover"
+                className="group bg-primary text-background px-8 sm:px-12 py-4 sm:py-5 font-headline-md text-[18px] sm:text-[20px] flex items-center gap-3 hover:scale-105 hover:bg-on-background hover:text-background transition-all duration-300 glow-hover"
               >
                 Start a Project
                 <span className="material-symbols-outlined transition-transform group-hover:rotate-45">north_east</span>
@@ -63,7 +63,7 @@ export function CTASection() {
             </ContactDialog>
             <a
               href="mailto:anishvis007@gmail.com"
-              className="group px-12 py-5 border border-outline-variant/30 font-headline-md text-[20px] text-on-surface-variant flex items-center gap-3 hover:border-primary/60 hover:text-primary transition-all duration-300"
+              className="group px-8 sm:px-12 py-4 sm:py-5 border border-outline-variant/30 font-headline-md text-[18px] sm:text-[20px] text-on-surface-variant flex items-center gap-3 hover:border-primary/60 hover:text-primary transition-all duration-300"
             >
               Send an Email
             </a>

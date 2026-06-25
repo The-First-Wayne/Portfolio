@@ -8,14 +8,14 @@ export function Philosophy() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-      className="py-40 px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter max-w-container-max mx-auto"
+      className="py-28 md:py-40 px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter max-w-container-max mx-auto"
     >
       <div className="md:col-span-5 mb-12 md:mb-0">
         <div className="font-label-sm text-label-md text-primary uppercase tracking-[0.3em] mb-6">Moto</div>
         <h2 className="font-headline-xl text-headline-xl text-on-surface leading-tight">"Smart design, built around you."</h2>
       </div>
       <div className="md:col-start-7 md:col-span-6">
-        <div className="font-body-lg text-body-lg text-on-surface-variant space-y-8">
+        <div className="font-body-lg text-body-lg text-on-surface-variant space-y-8 max-w-xl">
           <p>
             It started with a curiosity: what if the things I build could actually matter? I'm still early in that journey — picking up new skills, making mistakes, and figuring it all out one project at a time.
           </p>

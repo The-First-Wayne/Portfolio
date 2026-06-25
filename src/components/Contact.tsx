@@ -18,7 +18,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-40 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto"
+      className="py-28 md:py-40 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto"
     >
       <div className="asymmetric-grid gap-gutter">
         {/* Left — heading */}
@@ -65,7 +65,7 @@ export function Contact() {
           style={{ transitionDelay: '150ms' }}
         >
           {submitted ? (
-            <div className="glass-surface p-16 flex flex-col items-center justify-center text-center h-full min-h-[400px]">
+            <div className="glass-surface p-10 sm:p-16 flex flex-col items-center justify-center text-center h-full min-h-[320px] sm:min-h-[400px]">
               <span className="material-symbols-outlined text-primary text-6xl mb-6">check_circle</span>
               <h3
                 className="font-headline-md text-headline-md mb-3"

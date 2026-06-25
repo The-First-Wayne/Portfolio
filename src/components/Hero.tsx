@@ -62,7 +62,7 @@ export function Hero() {
           LEFT — text content
       ═══════════════════════════════ */}
       <div className="relative z-10 flex flex-col justify-center px-margin-mobile md:px-margin-desktop w-full md:w-1/2 min-h-screen pt-24 pb-16">
-        <motion.div variants={containerVariants} initial="hidden" animate="visible">
+        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="max-w-2xl">
 
           {/* Availability */}
           <motion.div variants={itemVariants} className="flex items-center gap-3 mb-8">
@@ -78,7 +78,7 @@ export function Hero() {
           {/* Name */}
           <motion.h1
             variants={itemVariants}
-            className="font-display-lg-mobile md:text-display-lg md:font-display-lg text-on-surface leading-none mb-4 tracking-widest"
+            className="font-display-lg-mobile text-[46px] sm:text-[52px] md:text-display-lg md:font-display-lg text-on-surface leading-none mb-4 tracking-widest"
           >
             ANISH<span className="text-primary">.G</span>
           </motion.h1>
@@ -94,24 +94,24 @@ export function Hero() {
           </motion.div>
 
           {/* CTA + bio */}
-          <motion.div variants={itemVariants} className="flex flex-col md:flex-row md:items-end gap-8 mb-12">
+          <motion.div variants={itemVariants} className="flex flex-col md:flex-row md:items-end gap-6 mb-12">
             <ContactDialog>
               <button
                 id="hero-cta-btn"
-                className="group w-fit bg-on-background text-background px-8 py-4 font-headline-md text-[20px] flex items-center gap-3 hover:scale-105 hover:bg-primary hover:text-on-primary transition-all duration-300"
+                className="group w-fit bg-on-background text-background px-6 sm:px-8 py-4 sm:py-5 font-headline-md text-[18px] sm:text-[20px] flex items-center gap-3 hover:scale-105 hover:bg-primary hover:text-on-primary transition-all duration-300"
               >
                 Let's Talk
                 <span className="material-symbols-outlined transition-transform group-hover:rotate-45">north_east</span>
               </button>
             </ContactDialog>
-            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xs opacity-80 leading-relaxed">
+            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-lg opacity-80 leading-relaxed">
               I build intelligent systems and premium digital experiences using AI agentics and robust engineering.
               Crafted with kinetic energy.
             </p>
           </motion.div>
 
           {/* Social */}
-          <motion.div variants={itemVariants} className="flex gap-6 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">
             {[
               { label: 'LinkedIn', href: 'https://www.linkedin.com/in/anish-gayen-319789335/' },
               { label: 'GitHub', href: 'https://github.com/The-First-Wayne' },
@@ -132,7 +132,7 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-10 left-margin-mobile md:left-margin-desktop flex items-center gap-3"
+          className="absolute bottom-10 left-6 sm:left-8 md:left-margin-desktop flex items-center gap-3"
         >
           <motion.div
             animate={{ scaleY: [1, 1.5, 1], opacity: [0.4, 1, 0.4] }}

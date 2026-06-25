@@ -34,7 +34,7 @@ const itemVariants = {
 
 export function Projects() {
   return (
-    <section id="work" className="relative py-40 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest overflow-hidden">
+    <section id="work" className="relative py-28 md:py-40 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest overflow-hidden">
       {/* Grid */}
       <div className="absolute inset-0 pointer-events-none"
         style={{
@@ -75,7 +75,7 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.9, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
-              className="group relative border-b border-outline-variant/15 py-12 md:py-14 grid grid-cols-1 md:grid-cols-12 gap-8 cursor-pointer hover:bg-surface-container/40 transition-colors duration-500 px-4 -mx-4"
+              className="group relative border-b border-outline-variant/15 py-12 md:py-14 grid grid-cols-1 md:grid-cols-12 gap-8 cursor-pointer hover:bg-surface-container/40 transition-colors duration-500 sm:px-4 sm:-mx-4"
             >
               {/* Number + year */}
               <div className="md:col-span-1 flex md:flex-col gap-4 md:gap-2 items-center md:items-start">

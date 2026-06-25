@@ -11,7 +11,7 @@ export function Footer() {
         }}
       />
 
-      <div className="relative flex flex-col md:flex-row justify-between items-center gap-8">
+      <div className="relative flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
         {/* Brand */}
         <div className="flex flex-col gap-1 items-center md:items-start">
           <div className="font-headline-md text-headline-md text-on-surface tracking-widest">

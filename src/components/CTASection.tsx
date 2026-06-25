@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { ContactDialog } from './ContactDialog'
 
 export function CTASection() {
   return (

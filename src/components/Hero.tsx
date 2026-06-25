@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import { ContactDialog } from './ContactDialog'
 import { ParticleCanvas } from './ParticleCanvas'
 
 const roles = ['AI Engineer', 'Full-Stack Developer', 'Systems Architect', 'UI/UX Craftsman']

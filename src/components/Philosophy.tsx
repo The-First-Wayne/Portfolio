@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 export function Philosophy() {
   return (
     <motion.section
+      id="philosophy"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -10,16 +11,16 @@ export function Philosophy() {
       className="py-40 px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter max-w-container-max mx-auto"
     >
       <div className="md:col-span-5 mb-12 md:mb-0">
-        <div className="font-label-sm text-label-sm text-primary uppercase tracking-[0.3em] mb-6">Our Philosophy</div>
-        <h2 className="font-headline-xl text-headline-xl text-on-surface leading-tight">We combine intelligent architecture, technology, and user-focused design.</h2>
+        <div className="font-label-sm text-label-sm text-primary uppercase tracking-[0.3em] mb-6">Moto</div>
+        <h2 className="font-headline-xl text-headline-xl text-on-surface leading-tight">"Smart design, built around you."</h2>
       </div>
       <div className="md:col-start-7 md:col-span-6">
         <div className="font-body-lg text-body-lg text-on-surface-variant space-y-8">
           <p>
-            My journey began with a simple idea: great design and intelligent systems should not only look beautiful but also create real impact. From working with early-stage AI startups to collaborating with global giants, I maintain an environment where content and performance are the protagonists.
+            It started with a curiosity: what if the things I build could actually matter? I'm still early in that journey — picking up new skills, making mistakes, and figuring it all out one project at a time.
           </p>
           <p>
-            I utilize expansive whitespace—or as we call it, "blackspace"—to allow high-fidelity work to breathe. My approach is mysterious, high-end, and kinetically charged.
+            Clean layouts, muted tones, subtle motion — that's just kind of my thing.
           </p>
           <div className="pt-8 border-t border-outline-variant/20">
             <div className="flex items-center gap-4">
@@ -32,7 +33,7 @@ export function Philosophy() {
               </div>
               <div>
                 <div className="font-label-sm text-label-sm text-on-surface font-bold">ANISH GAYEN</div>
-                <div className="font-label-sm text-[10px] text-on-surface-variant uppercase">AI Agent Builder & Engineer</div>
+                <div className="font-label-sm text-[10px] text-on-surface-variant uppercase">Engineer</div>
               </div>
             </div>
           </div>

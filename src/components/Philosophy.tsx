@@ -11,7 +11,7 @@ export function Philosophy() {
       className="py-40 px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter max-w-container-max mx-auto"
     >
       <div className="md:col-span-5 mb-12 md:mb-0">
-        <div className="font-label-sm text-label-sm text-primary uppercase tracking-[0.3em] mb-6">Moto</div>
+        <div className="font-label-sm text-label-md text-primary uppercase tracking-[0.3em] mb-6">Moto</div>
         <h2 className="font-headline-xl text-headline-xl text-on-surface leading-tight">"Smart design, built around you."</h2>
       </div>
       <div className="md:col-start-7 md:col-span-6">

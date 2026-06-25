@@ -95,7 +95,7 @@ export function Nav() {
             : 'bg-transparent py-6'
         }`}
       >
-        <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+        <div className="flex justify-between items-center px-6 sm:px-8 md:px-10 xl:px-14 max-w-container-max mx-auto">
 
           {/* Brand */}
           <button
@@ -106,12 +106,12 @@ export function Nav() {
           </button>
 
           {/* Desktop links */}
-          <div className="hidden md:flex gap-10 items-center font-label-sm text-body-md uppercase tracking-widest">
+          <div className="hidden xl:flex gap-6 xl:gap-10 items-center font-label-sm text-[11px] md:text-[14px] lg:text-body-md uppercase tracking-widest min-w-0">
             {navLinks.map(({ label, id }) => (
               <button
                 key={label}
                 onClick={() => handleNav(label, id)}
-                className={`relative group transition-colors duration-300 ${
+                className={`relative min-w-0 group transition-colors duration-300 ${
                   activeLink === label
                     ? 'text-primary'
                     : 'text-on-surface-variant hover:text-on-surface'
@@ -128,12 +128,12 @@ export function Nav() {
           </div>
 
           {/* Availability dot — desktop */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-3">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-60" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
             </span>
-            <span className="font-label-sm text-body-md text-on-surface-variant uppercase tracking-widest">
+            <span className="font-label-sm text-[10px] md:text-body-md text-on-surface-variant uppercase tracking-widest">
               Open to work
             </span>
           </div>
@@ -141,7 +141,7 @@ export function Nav() {
           {/* Hamburger — mobile */}
           <button
             id="nav-mobile-toggle"
-            className="md:hidden relative h-10 w-10 p-2 z-50 flex items-center justify-center"
+            className="xl:hidden relative h-10 w-10 p-2 z-50 flex items-center justify-center"
             onClick={() => setMobileOpen((o) => !o)}
             aria-label="Toggle menu"
           >

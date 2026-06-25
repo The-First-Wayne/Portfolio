@@ -61,8 +61,8 @@ export function Hero() {
       {/* ═══════════════════════════════
           LEFT — text content
       ═══════════════════════════════ */}
-      <div className="relative z-10 flex flex-col justify-center px-margin-mobile md:px-margin-desktop w-full md:w-1/2 min-h-screen pt-24 pb-16">
-        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="max-w-2xl">
+      <div className="relative z-10 flex flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-14 w-full lg:w-[58%] xl:w-[54%] 2xl:w-1/2 box-border min-h-screen pt-24 pb-14">
+        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="max-w-full lg:max-w-[560px] xl:max-w-none">
 
           {/* Availability */}
           <motion.div variants={itemVariants} className="flex items-center gap-3 mb-8">
@@ -78,7 +78,7 @@ export function Hero() {
           {/* Name */}
           <motion.h1
             variants={itemVariants}
-            className="font-display-lg-mobile text-[46px] sm:text-[52px] md:text-display-lg md:font-display-lg text-on-surface leading-none mb-4 tracking-widest"
+            className="font-display-lg-mobile text-[34px] sm:text-[38px] md:text-[44px] xl:text-[50px] 2xl:text-[56px] md:font-display-lg text-on-surface leading-none mb-4 tracking-widest"
           >
             ANISH<span className="text-primary">.G</span>
           </motion.h1>
@@ -94,11 +94,11 @@ export function Hero() {
           </motion.div>
 
           {/* CTA + bio */}
-          <motion.div variants={itemVariants} className="flex flex-col md:flex-row md:items-end gap-6 mb-12">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row sm:items-end gap-3 mb-10">
             <ContactDialog>
               <button
                 id="hero-cta-btn"
-                className="group w-fit bg-on-background text-background px-6 sm:px-8 py-4 sm:py-5 font-headline-md text-[18px] sm:text-[20px] flex items-center gap-3 hover:scale-105 hover:bg-primary hover:text-on-primary transition-all duration-300"
+                className="group w-fit bg-on-background text-background px-4 sm:px-6 py-3.5 sm:py-4 font-headline-md text-[14px] sm:text-[16px] flex items-center gap-2 sm:gap-3 hover:scale-105 hover:bg-primary hover:text-on-primary transition-all duration-300"
               >
                 Let's Talk
                 <span className="material-symbols-outlined transition-transform group-hover:rotate-45">north_east</span>
@@ -150,7 +150,7 @@ export function Hero() {
         initial={{ opacity: 0, x: 60 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number], delay: 0.2 }}
-        className="hidden md:block absolute right-0 top-0 h-full w-1/2 z-10 pointer-events-none"
+        className="hidden lg:block absolute right-0 top-0 h-full w-[42%] z-10 pointer-events-none"
       >
         {/* photo */}
         <img

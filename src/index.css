@@ -66,6 +66,85 @@
     padding-right: 2rem;
     animation: marquee-scroll 28s linear infinite;
   }
+  .sphere {
+    --s: 2s;
+    --d: 40;
+    --c: #ff6600;
+    width: 1.1rem;
+    height: 1.1rem;
+    background: #fff0;
+    position: relative;
+    animation: spin 5s linear 0s infinite;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sphere:hover {
+    animation-play-state: paused;
+  }
+  .sphere div {
+    --sz: 23%;
+    --dv: calc(var(--s) / var(--d));
+    --dl: calc(var(--dv) * -1);
+    width: var(--sz);
+    height: var(--sz);
+    position: absolute;
+    border: 0.06rem solid var(--c);
+    border-radius: 100%;
+    transform: rotateX(90deg) translateZ(0.55rem);
+    box-shadow:
+      0 0 0.05rem 0.05rem var(--c),
+      0 0 0.05rem 0.05rem var(--c) inset;
+    animation: shine var(--s) linear var(--dl) infinite;
+    background: #fff0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sphere div:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 0.06rem solid var(--c);
+    border-radius: 100%;
+    box-shadow: 0 0 0.05rem 0.05rem var(--c), 0 0 0.05rem 0.05rem var(--c) inset;
+    animation: shine var(--s) linear calc(var(--dl) * -1) infinite;
+  }
+  .sphere div:nth-child(1)  { transform: rotateX(90deg) translateZ(0.55rem);  --sz: 23%; --dl: calc(var(--dv) * -1); }
+  .sphere div:nth-child(2)  { transform: rotateX(90deg) translateZ(0.50rem);  --sz: 43%; --dl: calc(var(--dv) * -2); filter: hue-rotate(-2deg); }
+  .sphere div:nth-child(3)  { transform: rotateX(90deg) translateZ(0.44rem);  --sz: 60%; --dl: calc(var(--dv) * -3); filter: hue-rotate(-4deg); }
+  .sphere div:nth-child(4)  { transform: rotateX(90deg) translateZ(0.39rem);  --sz: 71%; --dl: calc(var(--dv) * -4); filter: hue-rotate(-6deg); }
+  .sphere div:nth-child(5)  { transform: rotateX(90deg) translateZ(0.33rem);  --sz: 80%; --dl: calc(var(--dv) * -5); filter: hue-rotate(-8deg); }
+  .sphere div:nth-child(6)  { transform: rotateX(90deg) translateZ(0.28rem);  --sz: 86%; --dl: calc(var(--dv) * -6); filter: hue-rotate(-10deg); }
+  .sphere div:nth-child(7)  { transform: rotateX(90deg) translateZ(0.22rem);  --sz: 91%; --dl: calc(var(--dv) * -7); filter: hue-rotate(-12deg); }
+  .sphere div:nth-child(8)  { transform: rotateX(90deg) translateZ(0.17rem);  --sz: 95%; --dl: calc(var(--dv) * -8); filter: hue-rotate(-14deg); }
+  .sphere div:nth-child(9)  { transform: rotateX(90deg) translateZ(0.11rem);  --sz: 97%; --dl: calc(var(--dv) * -9); filter: hue-rotate(-16deg); }
+  .sphere div:nth-child(10) { transform: rotateX(90deg) translateZ(0.055rem); --sz: 99%; --dl: calc(var(--dv) * -10); filter: hue-rotate(-18deg); }
+  .sphere div:nth-child(11) { transform: rotateX(90deg) translateZ(0rem);     --sz: 100%; --dl: calc(var(--dv) * -11); filter: hue-rotate(-20deg); }
+  .sphere div:nth-child(12) { transform: rotateX(90deg) translateZ(-0.055rem);--sz: 99%; --dl: calc(var(--dv) * -12); filter: hue-rotate(-22deg); }
+  .sphere div:nth-child(13) { transform: rotateX(90deg) translateZ(-0.11rem); --sz: 97%; --dl: calc(var(--dv) * -13); filter: hue-rotate(-24deg); }
+  .sphere div:nth-child(14) { transform: rotateX(90deg) translateZ(-0.17rem); --sz: 95%; --dl: calc(var(--dv) * -14); filter: hue-rotate(-26deg); }
+  .sphere div:nth-child(15) { transform: rotateX(90deg) translateZ(-0.22rem); --sz: 91%; --dl: calc(var(--dv) * -15); filter: hue-rotate(-28deg); }
+  .sphere div:nth-child(16) { transform: rotateX(90deg) translateZ(-0.28rem); --sz: 86%; --dl: calc(var(--dv) * -16); filter: hue-rotate(-30deg); }
+  .sphere div:nth-child(17) { transform: rotateX(90deg) translateZ(-0.33rem); --sz: 80%; --dl: calc(var(--dv) * -17); filter: hue-rotate(-32deg); }
+  .sphere div:nth-child(18) { transform: rotateX(90deg) translateZ(-0.39rem); --sz: 71%; --dl: calc(var(--dv) * -18); filter: hue-rotate(-34deg); }
+  .sphere div:nth-child(19) { transform: rotateX(90deg) translateZ(-0.44rem); --sz: 60%; --dl: calc(var(--dv) * -19); filter: hue-rotate(-36deg); }
+  .sphere div:nth-child(20) { transform: rotateX(90deg) translateZ(-0.50rem); --sz: 43%; --dl: calc(var(--dv) * -20); filter: hue-rotate(-38deg); }
+  .sphere div:nth-child(21) { transform: rotateX(90deg) translateZ(-0.55rem); --sz: 23%; --dl: calc(var(--dv) * -21); filter: hue-rotate(-40deg); }
+
+  @keyframes spin {
+    0% { transform: rotateX(-210deg) rotateY(0deg) rotatez(185deg); }
+    100% { transform: rotateX(-210deg) rotateY(360deg) rotatez(185deg); }
+  }
+  @keyframes shine {
+    50%, 100% {
+      border-color: #10101000;
+      box-shadow: 0 0 1px 1px #10101000, 0 0 1px 1px #10101000 inset;
+      filter: hue-rotate(540deg);
+    }
+  }
   /* Pause on hover — parent has class `group` */
   .group:hover .marquee-content {
     animation-play-state: paused;

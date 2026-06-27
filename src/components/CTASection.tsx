@@ -52,7 +52,9 @@ export function CTASection() {
           {/* CTA pair */}
           <div className="flex justify-center">
             <a
-              href="mailto:anishvis007@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=anishvis007@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group glass-surface px-8 sm:px-12 py-4 sm:py-5 border border-white/10 bg-white/5 backdrop-blur-xl font-headline-md text-[18px] sm:text-[20px] text-on-surface-variant flex items-center gap-3 hover:border-primary/50 hover:text-primary transition-all duration-300"
             >
               Send an Email

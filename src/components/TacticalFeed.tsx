@@ -34,7 +34,7 @@ export function TacticalFeed() {
 
         <div className="mt-16 text-center reveal reveal-delay-3">
           <Button asChild>
-            <a href={`mailto:${site.email}`}>Get In Touch</a>
+            <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${site.email}`} target="_blank" rel="noopener noreferrer">Get In Touch</a>
           </Button>
         </div>
       </div>

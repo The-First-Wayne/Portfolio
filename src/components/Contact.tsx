@@ -41,7 +41,7 @@ export function Contact() {
           {/* Contact meta */}
           <div className="mt-12 space-y-4">
             {[
-              { icon: 'alternate_email', label: 'anishvis007@gmail.com',  href: 'mailto:anishvis007@gmail.com' },
+              { icon: 'alternate_email', label: 'anishvis007@gmail.com',  href: 'https://mail.google.com/mail/?view=cm&fs=1&to=anishvis007@gmail.com' },
               { icon: 'phone',           label: '+91 9007692859',          href: 'tel:+919007692859' },
               { icon: 'location_on',     label: 'Kolkata, West Bengal',    href: '#' },
             ].map(({ icon, label, href }) => (

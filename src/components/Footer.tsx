@@ -3,13 +3,13 @@ import { type MouseEvent } from 'react'
 export function Footer() {
   const handleEmailClick = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault()
-    const mailtoHref = 'mailto:anishvis007@gmail.com?subject=Hello%20Anish&body=Hi%20Anish%2C%0A%0A'
-    const webmailHref = 'https://mail.google.com/mail/?view=cm&fs=1&to=anishvis007@gmail.com&su=Hello%20Anish'
+    const emailAddress = 'anishvis007@gmail.com'
+    const webmailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddress)}`
+    const openedWindow = window.open(webmailHref, '_blank', 'noopener,noreferrer')
 
-    window.location.href = mailtoHref
-    window.setTimeout(() => {
-      window.open(webmailHref, '_blank', 'noopener,noreferrer')
-    }, 1200)
+    if (!openedWindow) {
+      window.location.href = webmailHref
+    }
   }
 
   return (

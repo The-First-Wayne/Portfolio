@@ -105,5 +105,5 @@ export const feedItems = [
 export const socialLinks = [
   { label: 'LinkedIn', href: 'https://linkedin.com' },
   { label: 'GitHub', href: 'https://github.com' },
-  { label: 'Email', href: `mailto:${site.email}` },
+  { label: 'Email', href: `https://mail.google.com/mail/?view=cm&fs=1&to=${site.email}` },
 ] as const

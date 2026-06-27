@@ -95,8 +95,7 @@ export function Hero() {
           {/* CTA + bio */}
           <motion.div variants={itemVariants} className="mb-10">
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-lg opacity-80 leading-relaxed">
-              I build intelligent systems and premium digital experiences using AI agentics and robust engineering.
-              Crafted with kinetic energy.
+              I make things that work well and feel good, usually involving some AI under the hood.
             </p>
           </motion.div>
 

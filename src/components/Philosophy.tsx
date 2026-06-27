@@ -17,10 +17,10 @@ export function Philosophy() {
       <div className="md:col-start-7 md:col-span-6">
         <div className="font-body-lg text-body-lg text-on-surface-variant space-y-8 max-w-xl">
           <p>
-            It started with a curiosity: what if the things I build could actually matter? I'm still early in that journey — picking up new skills, making mistakes, and figuring it all out one project at a time.
+            It started with a curiosity: what if the things I build could actually matter? I'm still early in that journey picking up new skills, making mistakes, and figuring it all out one project at a time.
           </p>
           <p>
-            Clean layouts, muted tones, subtle motion — that's just kind of my thing.
+            Clean layouts, muted tones, subtle motion that's just kind of my thing.
           </p>
           <div className="pt-8 border-t border-outline-variant/20">
             <div className="flex items-center gap-4">

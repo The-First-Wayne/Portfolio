@@ -8,7 +8,7 @@ export function Footer() {
     const openedWindow = window.open(webmailHref, '_blank', 'noopener,noreferrer')
 
     if (!openedWindow) {
-      window.location.href = webmailHref
+      window.open(webmailHref, '_blank', 'noopener,noreferrer')
     }
   }
 

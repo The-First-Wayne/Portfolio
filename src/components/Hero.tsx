@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, type MouseEvent } from 'react'
 import { ParticleCanvas } from './ParticleCanvas'
 
 const roles = ['AI Engineer', 'Full-Stack Developer', 'Systems Architect', 'UI/UX Craftsman']
@@ -17,6 +17,17 @@ export function Hero() {
   const [roleIndex, setRoleIndex] = useState(0)
   const [displayed, setDisplayed] = useState('')
   const [typing, setTyping] = useState(true)
+
+  const handleEmailClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault()
+    const mailtoHref = 'mailto:anishvis007@gmail.com?subject=Hello%20Anish&body=Hi%20Anish%2C%0A%0A'
+    const webmailHref = 'https://mail.google.com/mail/?view=cm&fs=1&to=anishvis007@gmail.com&su=Hello%20Anish'
+
+    window.location.href = mailtoHref
+    window.setTimeout(() => {
+      window.open(webmailHref, '_blank', 'noopener,noreferrer')
+    }, 1200)
+  }
 
   useEffect(() => {
     const current = roles[roleIndex]
@@ -104,9 +115,10 @@ export function Hero() {
             {[
               { label: 'LinkedIn', href: 'https://www.linkedin.com/in/anish-gayen-319789335/', icon: '/linkedin.svg' },
               { label: 'GitHub', href: 'https://github.com/The-First-Wayne', icon: '/github.svg' },
-              { label: 'Email', href: 'mailto:anishvis007@gmail.com', icon: '/mail.svg' },
+              { label: 'Email', href: '#', icon: '/mail.svg' },
             ].map(({ label, href, icon }) => (
               <a key={label} href={href}
+                onClick={label === 'Email' ? handleEmailClick : undefined}
                 target={href.startsWith('http') ? '_blank' : undefined}
                 rel="noopener noreferrer"
                 className="relative group/link inline-flex items-center gap-2 hover:text-primary transition-colors duration-300">

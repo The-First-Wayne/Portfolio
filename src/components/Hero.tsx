@@ -20,13 +20,13 @@ export function Hero() {
 
   const handleEmailClick = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault()
-    const mailtoHref = 'mailto:anishvis007@gmail.com?subject=Hello%20Anish&body=Hi%20Anish%2C%0A%0A'
-    const webmailHref = 'https://mail.google.com/mail/?view=cm&fs=1&to=anishvis007@gmail.com&su=Hello%20Anish'
+    const emailAddress = 'anishvis007@gmail.com'
+    const webmailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddress)}`
+    const openedWindow = window.open(webmailHref, '_blank', 'noopener,noreferrer')
 
-    window.location.href = mailtoHref
-    window.setTimeout(() => {
-      window.open(webmailHref, '_blank', 'noopener,noreferrer')
-    }, 1200)
+    if (!openedWindow) {
+      window.location.href = webmailHref
+    }
   }
 
   useEffect(() => {
@@ -116,17 +116,36 @@ export function Hero() {
               { label: 'LinkedIn', href: 'https://www.linkedin.com/in/anish-gayen-319789335/', icon: '/linkedin.svg' },
               { label: 'GitHub', href: 'https://github.com/The-First-Wayne', icon: '/github.svg' },
               { label: 'Email', href: '#', icon: '/mail.svg' },
-            ].map(({ label, href, icon }) => (
-              <a key={label} href={href}
-                onClick={label === 'Email' ? handleEmailClick : undefined}
-                target={href.startsWith('http') ? '_blank' : undefined}
-                rel="noopener noreferrer"
-                className="relative group/link inline-flex items-center gap-2 hover:text-primary transition-colors duration-300">
-                <img src={icon} alt={`${label} icon`} className="h-4 w-4 object-contain" />
-                <span>{label}</span>
-                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover/link:w-full" />
-              </a>
-            ))}
+            ].map(({ label, href, icon }) => {
+              if (label === 'Email') {
+                return (
+                  <a
+                    key={label}
+                    href={href}
+                    onClick={handleEmailClick}
+                    className="relative group/link inline-flex items-center gap-2 hover:text-primary transition-colors duration-300"
+                  >
+                    <img src={icon} alt={`${label} icon`} className="h-4 w-4 object-contain" />
+                    <span>{label}</span>
+                    <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover/link:w-full" />
+                  </a>
+                )
+              }
+
+              return (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative group/link inline-flex items-center gap-2 hover:text-primary transition-colors duration-300"
+                >
+                  <img src={icon} alt={`${label} icon`} className="h-4 w-4 object-contain" />
+                  <span>{label}</span>
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover/link:w-full" />
+                </a>
+              )
+            })}
           </motion.div>
         </motion.div>
 

@@ -70,7 +70,7 @@ export function Certifications() {
         </motion.div>
 
         {/* Cert list */}
-        <div className="flex flex-col border-t border-outline-variant/15">
+        <div className="flex flex-col gap-4 border-t border-outline-variant/15 pt-2">
           {certs.map((cert, i) => (
             <motion.div
               key={i}
@@ -78,7 +78,7 @@ export function Certifications() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.8, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className="group glass-surface flex flex-col md:flex-row items-start md:items-center gap-6 py-8 border border-white/10 shadow-xl shadow-black/10 transition-colors duration-400 px-0 sm:px-4 sm:-mx-4 cursor-default"
+              className="group glass-surface grid grid-cols-[auto_1fr_auto] md:grid-cols-[auto_auto_1fr_auto] items-start md:items-center gap-3 sm:gap-6 py-6 sm:py-8 px-4 sm:px-6 sm:-mx-4 rounded-2xl border border-white/10 shadow-xl shadow-black/10 transition-colors duration-400 cursor-default"
             >
               {/* Index */}
               <span className="hidden md:block font-label-sm text-label-sm text-primary/30 tracking-widest w-8 shrink-0">
@@ -86,12 +86,12 @@ export function Certifications() {
               </span>
 
               {/* Icon */}
-              <span className="material-symbols-outlined text-primary/50 group-hover:text-primary transition-colors duration-300 text-3xl shrink-0">
+              <span className="material-symbols-outlined text-primary/50 group-hover:text-primary transition-colors duration-300 text-3xl shrink-0 mt-0.5 pr-1">
                 {cert.icon}
               </span>
 
               {/* Text */}
-              <div className="flex-1">
+              <div className="min-w-0">
                 <h4 className="font-headline-md text-[18px] md:text-[22px] text-on-surface leading-snug mb-1">
                   {cert.title}
                 </h4>
@@ -101,7 +101,7 @@ export function Certifications() {
               </div>
 
               {/* Year */}
-              <span className="font-label-sm text-label-sm text-on-surface-variant/30 tracking-widest shrink-0">
+              <span className="font-label-sm text-label-sm text-on-surface-variant/30 tracking-widest shrink-0 text-right md:text-left pl-2">
                 {cert.year}
               </span>
             </motion.div>

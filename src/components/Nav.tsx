@@ -100,32 +100,12 @@ export function Nav() {
           {/* Brand */}
           <button
             onClick={() => scrollToSection('top')}
-            className="flex items-center justify-center h-8 w-8 rounded-full transition-transform duration-300 hover:scale-[1.02]"
-            aria-label="Brand sphere"
+            className="flex items-center justify-center h-8 px-2 transition-transform duration-300 hover:scale-[1.02]"
+            aria-label="Brand"
           >
-            <div className="sphere" aria-hidden="true">
-              <div />
-              <div />
-              <div />
-              <div />
-              <div />
-              <div />
-              <div />
-              <div />
-              <div />
-              <div />
-              <div />
-              <div />
-              <div />
-              <div />
-              <div />
-              <div />
-              <div />
-              <div />
-              <div />
-              <div />
-              <div />
-            </div>
+            <span className="font-headline-md text-body-md uppercase tracking-widest text-on-surface">
+              AG
+            </span>
           </button>
 
           {/* Desktop links */}
